@@ -101,3 +101,16 @@ InitTestScene*.unity*
 # Compiled files and builds
 *.o
 *.gbc
+
+* text=auto
+
+# Force specific Unity files to be text and use LF
+*.cs text eol=lf
+*.shader text eol=lf
+*.uss text eol=lf
+*.uxml text eol=lf
+*.asmdef text eol=lf
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
