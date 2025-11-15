@@ -8,10 +8,21 @@ public class Forearm : MonoBehaviour
 
     public float zDistance = 10f;
 
+    public float followSpeed = 15f;
+
+    public float linearDrag = 2f;
+
+    private Rigidbody2D rb;
+
+    private Vector2 targetPosition;
+
     void Start()
     {
-        if (mainCamera == null)
-        {
+        rb = GetComponent<Rigidbody2D>();
+
+        rb.drag = linearDrag;
+
+        if (mainCamera == null) {
             mainCamera = Camera.main;
         }
     }
@@ -19,15 +30,6 @@ public class Forearm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mouseScreenPosition = Input.mousePosition;
-
-        // 2. Tell the camera how "far" into the world to place the object
-        mouseScreenPosition.z = zDistance;
-
-        // 3. Convert from 2D pixel coordinates to 3D world coordinates
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-
-        // 4. Set this object's position to the new world position
-        transform.position = mouseWorldPosition;
+        
     }
 }
