@@ -61,6 +61,7 @@ public class Arm : Limb
 			// X follows, Y inverted
 			dragDelta = new Vector2(delta.x, -delta.y);
 			isDragging = true;
+            rb.constraints |= RigidbodyConstraints2D.FreezePosition;
 			// Do not update targetPosition; drag mode moves the other target and limb will be frozen
 		}
 		else
@@ -68,6 +69,7 @@ public class Arm : Limb
 			// Exit drag mode and let base compute target for normal follow
 			dragDelta = Vector2.zero;
 			isDragging = false;
+            rb.constraints &= ~RigidbodyConstraints2D.FreezePosition;
 			base.UpdateTarget();
 		}
 	}
