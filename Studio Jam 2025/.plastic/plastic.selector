@@ -1,0 +1,3 @@
+repository "Studio Jam 2025/Studio Jam 2025@20066549081446@cloud"
+  path "/"
+    smartbranch "/main/Yifan Branch"
